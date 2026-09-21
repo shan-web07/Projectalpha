@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "CF Tester",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "*://codeforces.com/*",
+    "http://localhost:8080/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": 
+      [
+      "*://codeforces.com/contest/*/problem/*",
+      "*://codeforces.com/problemset/problem/*/*",
+      "*://codeforces.com/gym/*/problem/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CF Tester"
+  }
+}
